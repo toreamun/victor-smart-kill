@@ -8,7 +8,7 @@ setuptools.setup(
     version="0.0.3",
     author="Tore Amundsen",
     author_email="tore@amundsen.org",
-    description="A simple Python wrapper for Victor Smart Kill API.",
+    description="A simple async Python wrapper for Victor Smart Kill API.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/toreamun/victor-smart-kill",
