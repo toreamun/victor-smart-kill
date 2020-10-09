@@ -65,6 +65,7 @@ class VictorAsyncClient(AsyncClient):
         """Intercept all requests and add token. Fetches token if needed."""
         return await self._request(True, *args, **kwargs)
 
+    # pylint: disable=R0913
     async def _request(
         self, retry_unauthorized, method, url, data=None, headers=None, **kwargs
     ) -> Response:

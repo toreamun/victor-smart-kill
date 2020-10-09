@@ -1,3 +1,4 @@
+"""API module."""
 from typing import Any, Dict, List
 
 from marshmallow import RAISE
