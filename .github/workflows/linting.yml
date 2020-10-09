@@ -30,3 +30,6 @@ jobs:
     - name: Analysing the code with pylint
       run: |
         pylint victor_smart_kill
+    - name: Analysing the code with mypy
+      run: |
+        mypy -p victor_smart_kill 
