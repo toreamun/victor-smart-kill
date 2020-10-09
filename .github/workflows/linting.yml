@@ -28,4 +28,4 @@ jobs:
         flake8 victor_smart_kill
     - name: Analysing the code with pylint
       run: |
-        pylint ./victor_smart_kill/ `ls -R|grep .py$|xargs`
+        pylint victor_smart_kill
