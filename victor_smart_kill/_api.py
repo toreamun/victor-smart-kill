@@ -4,9 +4,20 @@ from marshmallow import RAISE
 from marshmallow.schema import Schema
 
 from ._client import VictorAsyncClient
-from ._models import (Activity, ActivitySchema, MobileApp, MobileAppsSchema,
-                      Operator, OperatorSchema, Profile, ProfileSchema, Trap,
-                      TrapSchema, User, UserSchema)
+from ._models import (
+    Activity,
+    ActivitySchema,
+    MobileApp,
+    MobileAppsSchema,
+    Operator,
+    OperatorSchema,
+    Profile,
+    ProfileSchema,
+    Trap,
+    TrapSchema,
+    User,
+    UserSchema,
+)
 
 
 class VictorApi:
