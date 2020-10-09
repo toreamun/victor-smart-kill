@@ -18,7 +18,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8
         pip install pylint
- #        pip install -r requirements.txt
+        pip install mypy
+        pip install httpx
+        pip install marshmallow
+        pip install marshmallow-dataclass
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with flake8
       run: |
         flake8 victor_smart_kill
