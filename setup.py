@@ -1,3 +1,4 @@
+"""Setup Configuration File."""
 import setuptools
 
 with open("README.md", "r") as fh:
@@ -5,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="victor_smart_kill",
-    version="0.0.6",
+    version="0.0.7",
     author="Tore Amundsen",
     author_email="tore@amundsen.org",
     description="A simple async Python wrapper for Victor Smart-Kill API.",
@@ -29,7 +30,7 @@ setuptools.setup(
     install_requires=[
         "httpx>=0.16.*",
         "marshmallow>=3.8",
-        "marshmallow-dataclass>=8.0",
+        "marshmallow-dataclass>=8.1",
         "typeguard",
     ],
 )
