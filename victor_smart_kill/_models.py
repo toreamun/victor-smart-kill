@@ -202,16 +202,16 @@ class Trap:  # pylint: disable=too-many-instance-attributes
     serial_number: str
     auto_upgrade: bool
     status: int
-    location: str
-    lat: float
-    long: float
+    location: Optional[str]
+    lat: Optional[float]
+    long: Optional[float]
     upgrade_firmware: Optional[str]
     commercial_gateway: Optional[str]
     commercial_monitor_mode_enabled: bool
     lorawan_app_key: str
     site_name: Optional[str]
-    floor_plan_x: int
-    floor_plan_y: int
+    floor_plan_x: Optional[int]
+    floor_plan_y: Optional[int]
     building_name: Optional[str]
     floor_name: Optional[str]
     room: Optional[str]
