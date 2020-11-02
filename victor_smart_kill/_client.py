@@ -80,9 +80,9 @@ class VictorAsyncClient(AsyncClient):
 
         request_headers["Authorization"] = f"Token {self._token}"
 
-        log.debug("Adding token %s to request.", self._token)
+        log.debug("Adding token to request.")
         log.debug("Requesting url %s using method %s.", url, method)
-        log.debug("Supplying headers %s and data %s", request_headers, data)
+        log.debug("Supplying headers %s and data %s.", request_headers.keys(), data)
         log.debug("Passing through key word arguments %s.", kwargs)
 
         response = await super().request(
