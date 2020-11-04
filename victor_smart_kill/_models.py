@@ -67,6 +67,17 @@ class MobileApp:  # pylint: disable=too-many-instance-attributes
 
 
 @dataclass
+class ProfileTermsAndConditions:
+    """Profile terms- and condtions data class."""
+
+    id: int  # pylint: disable=invalid-name
+    time_stamp: datetime
+    profile_id: int
+    term_id: int
+    terms_version: str
+
+
+@dataclass
 class Profile:  # pylint: disable=too-many-instance-attributes
     """Profile data class."""
 
@@ -101,6 +112,7 @@ class Profile:  # pylint: disable=too-many-instance-attributes
     apns_arns_pro: Optional[Any] = field(metadata={"data_key": "apnsARNsPro"})
     favorite_sites: Optional[Any]
     notify_false_trigger: bool
+    accepted_terms_and_conditions: Optional[List[ProfileTermsAndConditions]]
 
 
 @dataclass
@@ -122,8 +134,8 @@ class User:  # pylint: disable=too-many-instance-attributes
 
 
 @dataclass
-class TermsAndConditions:
-    """Terms- and condtions data class."""
+class OperatorTermsAndConditions:
+    """Operator terms- and condtions data class."""
 
     id: int  # pylint: disable=invalid-name
     operator_id: int
@@ -148,7 +160,7 @@ class Operator:  # pylint: disable=too-many-instance-attributes
     terms_version: int
     terms: str
     contact: User
-    terms_and_conditions: Optional[List[TermsAndConditions]]
+    terms_and_conditions: Optional[List[OperatorTermsAndConditions]]
 
 
 @dataclass
@@ -237,7 +249,7 @@ ActivitySchema = class_schema(Activity)
 MobileAppsSchema = class_schema(MobileApp)
 OperatorSchema = class_schema(Operator)
 ProfileSchema = class_schema(Profile)
-TermsAndConditionsSchema = class_schema(TermsAndConditions)
+TermsAndConditionsSchema = class_schema(OperatorTermsAndConditions)
 TrapSchema = class_schema(Trap)
 TrapStatisticsSchema = class_schema(TrapStatistics)
 UserSchema = class_schema(User)
