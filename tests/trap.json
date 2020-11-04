@@ -1,0 +1,106 @@
+{
+    "id": 73802,
+    "url": "https://www.victorsmartkill.com/traps/73802/",
+    "corruption_status": 0,
+    "operator": null,
+    "operator_name": null,
+    "name": "elektrokill loft",
+    "ssid": "IOT",
+    "serial_number": "WM1234",
+    "auto_upgrade": false,
+    "status": 0,
+    "location": "https://www.victorsmartkill.com/locations/48852/",
+    "lat": "0.2626953125",
+    "long": "50.26376295089722",
+    "upgrade_firmware": null,
+    "commercial_gateway": null,
+    "commercial_monitor_mode_enabled": false,
+    "lorawan_app_key": "asdf",
+    "site_name": null,
+    "floor_plan_x": 0,
+    "floor_plan_y": 0,
+    "building_name": null,
+    "floor_name": null,
+    "room": null,
+    "room_name": null,
+    "trap_type": 2,
+    "trap_type_verbose": "Mouse Trap",
+    "alerts": 205295,
+    "trapstatistics": {
+        "id": 73802,
+        "url": "https://www.victorsmartkill.com/trapstatistics/73802/",
+        "trap": "https://www.victorsmartkill.com/traps/73802/",
+        "trap_name": "elektrokill loft",
+        "kills_present": 0,
+        "install_date": "2020-10-25T19:50:08.800489Z",
+        "owner_name": "test@test.org",
+        "owner_email": "test@test.org",
+        "last_report_date": "2020-11-04T21:20:04.178220Z",
+        "last_kill_date": "2020-10-28T22:13:26.568051Z",
+        "temperature": 165,
+        "battery_level": 46,
+        "total_kills": 13,
+        "total_escapes": 3,
+        "rx_power_level": -41,
+        "firmware_version": "1.3.2",
+        "trap_provisioned": true,
+        "last_sequence_number": null,
+        "total_retreats": null,
+        "wireless_network_rssi": -41,
+        "error_code": 0,
+        "send_conn_lost_nt": true,
+        "send_empty_trap_nt": true,
+        "board_type": "WEMT",
+        "last_maintenance_date": "No maintenance records exist."
+    },
+    "corruption_status_options": [
+        [
+            -1,
+            "Usably corrupt, specifics currently unknown."
+        ],
+        [
+            -2,
+            "Duplicate serial number database records."
+        ],
+        [
+            -3,
+            "Change Access Check- Physical trap wifi serial num/id mismatch from db record. [SET BY SERVER ONLY]"
+        ],
+        [
+            -4,
+            "Different physical trap attempted corruption successful."
+        ],
+        [
+            -5,
+            "Physical trap sent log where trap user perms did not exist. [SET BY SERVER ONLY]"
+        ],
+        [
+            -6,
+            "Physical trap sent log where username and db record serial num did not match. [SET BY SERVER ONLY]"
+        ],
+        [
+            -7,
+            "Physical trap sent log where trap user perms didn't exist AND db record serial num did not match. [SET BY SERVER ONLY]"
+        ],
+        [
+            -8,
+            "User attempted a serial number overwrite. [SET BY SERVER ONLY]"
+        ],
+        [
+            0,
+            "Trap not corrupted."
+        ],
+        [
+            1,
+            "Unusably corrupt, specifics currently unknown."
+        ],
+        [
+            2,
+            "Database trap record successful corruption through serial number overwrite."
+        ],
+        [
+            3,
+            "Determined beforehand this trap is a part of a batch that should be returned. [SET BY WOODSTREAM ADMIN]"
+        ]
+    ]
+}
