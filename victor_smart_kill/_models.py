@@ -172,7 +172,7 @@ class TrapStatistics:  # pylint: disable=too-many-instance-attributes
     trap: str
     trap_name: str
     kills_present: int
-    install_date: datetime
+    install_date: Optional[datetime]
     owner_name: str
     owner_email: str
     last_report_date: datetime
