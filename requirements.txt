@@ -1,0 +1,7 @@
+httpx==0.16.*
+marshmallow==3.9
+marshmallow-dataclass[enum,union]==8.1
+pydocstyle
+flake8
+black
+python-dateutil
