@@ -8,7 +8,8 @@ import logging
 import os
 import sys
 
-from victor_smart_kill import VictorApi, VictorAsyncClient
+sys.path.append(os.path.abspath(".."))
+from victor_smart_kill import VictorApi, VictorAsyncClient  # noqa:E402
 
 _version = "0.1"
 
