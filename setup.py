@@ -30,7 +30,6 @@ setuptools.setup(
     install_requires=[
         "httpx>=0.16.*",
         "marshmallow>=3.8",
-        "marshmallow-dataclass>=8.1",
-        "typeguard",
+        "marshmallow-dataclass[enum,union]>=8.1",
     ],
 )
