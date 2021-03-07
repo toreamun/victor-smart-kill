@@ -1,5 +1,4 @@
 """API module."""
-from contextlib import AbstractAsyncContextManager
 from typing import Any, Dict, List
 
 from marshmallow import RAISE
