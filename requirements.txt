@@ -1,7 +1,8 @@
-httpx==0.16.*
-marshmallow==3.9
-marshmallow-dataclass[enum,union]==8.1
+httpx==0.17.*
+marshmallow==3.10
+marshmallow-dataclass[enum,union]==8.3
 pydocstyle
 flake8
 black
 python-dateutil
+pytest-asyncio
