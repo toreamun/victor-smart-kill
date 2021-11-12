@@ -177,7 +177,7 @@ class TrapStatistics:  # pylint: disable=too-many-instance-attributes
     owner_email: str
     last_report_date: datetime
     last_kill_date: Optional[datetime]
-    temperature: int
+    temperature: Optional[int]
     battery_level: int
     total_kills: Optional[int]
     total_escapes: Optional[int]
@@ -194,9 +194,9 @@ class TrapStatistics:  # pylint: disable=too-many-instance-attributes
     last_maintenance_date: Union[str, datetime]
 
     @property
-    def temperature_celcius(self) -> float:
+    def temperature_celcius(self) -> Optional[float]:
         """Get temperature in celcius."""
-        return round(self.temperature / 20, 1)
+        return round(self.temperature / 20, 1) if self.temperature else None
 
 
 @dataclass
