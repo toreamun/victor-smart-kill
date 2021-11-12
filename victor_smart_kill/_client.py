@@ -74,7 +74,7 @@ class VictorAsyncClient(AsyncClient):
             await self.fetch_token()
 
         if not headers:
-            request_headers = dict()
+            request_headers = {}
         else:
             request_headers = headers.copy()
 
