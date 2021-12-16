@@ -2,7 +2,10 @@ httpx~=0.20
 marshmallow~=3.8
 marshmallow-dataclass[enum,union]~=8.1
 pydocstyle
-flake8
-black
 python-dateutil
+flake8
+flake8-black
+black
+pylint
 pytest-asyncio
+mypy
