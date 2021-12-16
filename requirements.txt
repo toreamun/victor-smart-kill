@@ -1,6 +1,6 @@
-httpx==0.17.*
-marshmallow==3.10
-marshmallow-dataclass[enum,union]==8.3
+httpx~=0.20
+marshmallow~=3.8
+marshmallow-dataclass[enum,union]~=8.1
 pydocstyle
 flake8
 black

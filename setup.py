@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="victor_smart_kill",
-    version="2021.11.0",
+    version="2021.12.0",
     author="Tore Amundsen",
     author_email="tore@amundsen.org",
     description="A simple unofficial async Python wrapper for Victor Smart-Kill API.",
@@ -28,8 +28,8 @@ setuptools.setup(
     ],
     python_requires=">=3.6",
     install_requires=[
-        "httpx>=0.20.*",
-        "marshmallow>=3.8",
-        "marshmallow-dataclass[enum,union]>=8.1",
+        "httpx~=0.20",
+        "marshmallow~=3.8",
+        "marshmallow-dataclass[enum,union]~=8.1",
     ],
 )
