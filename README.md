@@ -1,6 +1,6 @@
 # Victor Smart-Kill
 
-Status and history of Victor-Smart Kill WI-FI electronic mouse and rat traps from VictorPest.com can be accessed with this async Python wrapper module. The wrapper uses the same API as the Victor Pest APP.
+Status and history of Victor Smart-Kill WI-FI electronic mouse and rat traps from VictorPest.com can be accessed with this async Python wrapper module. The wrapper uses the same API as the Victor Pest APP.
 
 [![License][license-shield]](LICENSE)
 [![BuyMeCoffee][buymecoffeebadge]][buymecoffee]
