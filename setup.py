@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="victor_smart_kill",
-    version="2021.12.0",
+    version="1.0.0",
     author="Tore Amundsen",
     author_email="tore@amundsen.org",
     description="A simple unofficial async Python wrapper for Victor Smart-Kill API.",
