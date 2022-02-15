@@ -122,7 +122,7 @@ class User:  # pylint: disable=too-many-instance-attributes
     id: int  # pylint: disable=invalid-name
     url: str
     username: str
-    password: str
+    password: Optional[str]
     email: str
     groups: List[str]
     group_names: List[str]
