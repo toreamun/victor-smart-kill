@@ -1,10 +1,17 @@
 {
     "[python]": {
         "editor.codeActionsOnSave": {
-            "source.organizeImports": true
+            "source.organizeImports": true,
+            "editor.defaultFormatter": "ms-python.python"
         }
     },
     "python.pythonPath": ".venv/bin/python",
     "python.formatting.provider": "black",
     "python.linting.flake8Enabled": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "files.trimTrailingWhitespace": true,
+    "python.testing.pytestArgs": [
+        "-s"
+    ]
 }
