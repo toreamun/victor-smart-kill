@@ -80,10 +80,11 @@ class VictorAsyncClient(AsyncClient):
 
         request_headers["Authorization"] = f"Token {self._token}"
 
-        log.debug("Adding token to request.")
-        log.debug("Requesting url %s using method %s.", url, method)
-        log.debug("Supplying headers %s and data %s.", request_headers.keys(), data)
-        log.debug("Passing through key word arguments %s.", kwargs)
+        if log.isEnabledFor(logging.DEBUG):
+            log.debug("Adding token to request.")
+            log.debug("Requesting url %s using method %s.", url, method)
+            log.debug("Supplying headers %s and data %s.", request_headers.keys(), data)
+            log.debug("Passing through key word arguments %s.", kwargs)
 
         response = await super().request(
             method, url, headers=request_headers, data=data, **kwargs
@@ -94,6 +95,15 @@ class VictorAsyncClient(AsyncClient):
             await self.fetch_token()
             response = await self._request(
                 False, method, url, data=data, headers=headers, **kwargs
+            )
+
+        if log.isEnabledFor(logging.DEBUG):
+            log.debug(
+                "Response status code %d from %s %s with content: %s",
+                response.status_code,
+                method,
+                url,
+                response.content,
             )
 
         return response
