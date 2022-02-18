@@ -11,8 +11,6 @@ DEFAULT_BASE_URL = URL("https://www.victorsmartkill.com")
 class InvalidCredentialsError(Exception):
     """Invalid authentication credentials."""
 
-    pass
-
 
 class VictorAsyncClient(AsyncClient):
     """An asynchronous HTTP client to Victor Smart Kill API."""
