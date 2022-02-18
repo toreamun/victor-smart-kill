@@ -8,6 +8,12 @@ log = logging.getLogger(__name__)
 DEFAULT_BASE_URL = URL("https://www.victorsmartkill.com")
 
 
+class InvalidCredentialsError(Exception):
+    """Invalid authentication credentials."""
+
+    pass
+
+
 class VictorAsyncClient(AsyncClient):
     """An asynchronous HTTP client to Victor Smart Kill API."""
 
@@ -47,6 +53,11 @@ class VictorAsyncClient(AsyncClient):
             "api-token-auth/",
             json=self._credentials,
         )
+
+        if response.status_code == codes.BAD_REQUEST:
+            if response.content.find(b"credentials") != -1:
+                log.debug("Credentials error: %s", str(response.content))
+                raise InvalidCredentialsError(response.content)
 
         response.raise_for_status()
 
