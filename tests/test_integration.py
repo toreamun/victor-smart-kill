@@ -2,6 +2,8 @@
 import os
 
 import pytest
+import pytest_asyncio
+
 from victor_smart_kill import (
     MobileApp,
     Operator,
@@ -25,7 +27,7 @@ def secret_victor_password():
     return os.environ.get("SECRET_VICTOR_PASSWORD")
 
 
-@pytest.fixture
+@pytest_asyncio.fixture
 async def victor_api_client(secret_victor_username, secret_victor_password):
     """Get Victor API async client instance for use in integration tests."""
     async with VictorAsyncClient(
@@ -34,7 +36,7 @@ async def victor_api_client(secret_victor_username, secret_victor_password):
         yield client
 
 
-@pytest.fixture
+@pytest_asyncio.fixture
 async def victor_api(secret_victor_username, secret_victor_password):
     """Get Victor API client instance for use in integration tests."""
     async with VictorAsyncClient(
