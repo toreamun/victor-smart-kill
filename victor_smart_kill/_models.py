@@ -192,6 +192,9 @@ class TrapStatistics:  # pylint: disable=too-many-instance-attributes
     send_empty_trap_nt: bool
     board_type: str
     last_maintenance_date: Union[str, datetime]
+    bait_level: Optional[Any]
+    current_bait: Optional[Any]
+    last_bait_quantity: Optional[int]
 
     @property
     def temperature_celcius(self) -> Optional[float]:
