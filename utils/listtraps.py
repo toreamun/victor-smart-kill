@@ -67,7 +67,7 @@ async def start():
 
 def test():
     """Print test info."""
-    logging.warn("Testing")
+    logging.warning("Testing")
 
 
 def parse_args(argv):
