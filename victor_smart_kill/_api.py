@@ -1,5 +1,7 @@
 """API module."""
-from typing import Any, Dict, List
+
+import logging
+from typing import Any, Optional, Dict, List
 
 from marshmallow import RAISE
 from marshmallow.schema import Schema
@@ -20,11 +22,19 @@ from ._models import (
     UserSchema,
 )
 
+log = logging.getLogger(__name__)
+
+
+class ResponseException(Exception):
+    """A response lacks recognizable structure/content"""
+
 
 class VictorApi:
     """Access Victor remote API."""
 
-    def __init__(self, victor_client: VictorAsyncClient, unknown: str = None) -> None:
+    def __init__(
+            self, victor_client: VictorAsyncClient, unknown: Optional[str] = None
+    ) -> None:
         """Initialize VictorApi."""
         if not victor_client:
             raise ValueError("Victor client is required.")
@@ -43,7 +53,8 @@ class VictorApi:
         if result:
             return result
 
-        raise Exception("Unexpected response content")
+        log.debug("Response content: %s", json)
+        raise ResponseException("Unexpected response content")
 
     async def _get_list_by_schema(self, schema: Schema, url: str) -> List[Any]:
         return schema.load(

@@ -13,6 +13,10 @@ class InvalidCredentialsError(Exception):
     """Invalid authentication credentials."""
 
 
+class TokenResponseException(Exception):
+    """A token endpoint sends an invalid/unexpected response"""
+
+
 class VictorAsyncClient(AsyncClient):
     """An asynchronous HTTP client to Victor Smart Kill API."""
 
@@ -61,11 +65,11 @@ class VictorAsyncClient(AsyncClient):
         response.raise_for_status()
 
         token = response.json().get("token")
-        if token:
-            self._token = token
-            log.info("Fetched token.")
-        else:
-            raise Exception("Unexpected response from token endpoind")
+        if not token:
+            raise TokenResponseException("Unexpected response from token endpoint")
+
+        self._token = token
+        log.info("Fetched token.")
 
     async def request(
         self,
