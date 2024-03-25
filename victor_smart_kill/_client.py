@@ -1,4 +1,5 @@
 """Victor Smart Kill API module."""
+
 import logging
 
 from httpx import URL, AsyncClient, Response, codes
@@ -82,9 +83,8 @@ class VictorAsyncClient(AsyncClient):
             log.info("Token is missing. Fetch token.")
             await self.fetch_token()
 
-        if not headers:
-            request_headers = {}
-        else:
+        request_headers = {}
+        if headers:
             request_headers = headers.copy()
 
         request_headers["Authorization"] = f"Token {self._token}"
