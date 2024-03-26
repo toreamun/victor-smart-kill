@@ -33,7 +33,7 @@ class VictorApi:
     """Access Victor remote API."""
 
     def __init__(
-            self, victor_client: VictorAsyncClient, unknown: Optional[str] = None
+        self, victor_client: VictorAsyncClient, unknown: Optional[str] = None
     ) -> None:
         """Initialize VictorApi."""
         if not victor_client:
