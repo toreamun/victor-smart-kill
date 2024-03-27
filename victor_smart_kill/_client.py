@@ -1,4 +1,5 @@
 """Victor Smart Kill API module."""
+
 import logging
 
 from httpx import URL, AsyncClient, Response, codes
@@ -10,6 +11,10 @@ DEFAULT_BASE_URL = URL("https://www.victorsmartkill.com")
 
 class InvalidCredentialsError(Exception):
     """Invalid authentication credentials."""
+
+
+class TokenResponseException(Exception):
+    """A token endpoint sends an invalid/unexpected response"""
 
 
 class VictorAsyncClient(AsyncClient):
@@ -60,11 +65,11 @@ class VictorAsyncClient(AsyncClient):
         response.raise_for_status()
 
         token = response.json().get("token")
-        if token:
-            self._token = token
-            log.info("Fetched token.")
-        else:
-            raise Exception("Unexpected response from token endpoind")
+        if not token:
+            raise TokenResponseException("Unexpected response from token endpoint")
+
+        self._token = token
+        log.info("Fetched token.")
 
     async def request(
         self,
@@ -82,9 +87,8 @@ class VictorAsyncClient(AsyncClient):
             log.info("Token is missing. Fetch token.")
             await self.fetch_token()
 
-        if not headers:
-            request_headers = {}
-        else:
+        request_headers = {}
+        if headers:
             request_headers = headers.copy()
 
         request_headers["Authorization"] = f"Token {self._token}"

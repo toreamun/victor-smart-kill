@@ -1,4 +1,5 @@
 """Mapping unit tests."""
+
 import json
 import pathlib
 

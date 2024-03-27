@@ -1,4 +1,5 @@
 """Setup Configuration File."""
+
 import setuptools
 
 with open("README.md", "r") as fh:
