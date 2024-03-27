@@ -35,6 +35,10 @@ jobs:
         run: |
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
+      - name: Check formatting with black
+        run: |
+          black --check victor_smart_kill
+
       - name: Lint with flake8
         run: |
           flake8 victor_smart_kill
