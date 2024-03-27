@@ -8,30 +8,49 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
+      fail-fast: false
       matrix:
-        python-version: ["3.6", "3.7", "3.8", "3.9"]
+        python-version:
+          - "3.7"
+          - "3.8"
+          - "3.9"
+          - "3.10"
+          - "3.11"
+          - "3.12"
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python }}
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Lint with flake8
-      run: |
-        flake8 victor_smart_kill
-    - name: Analysing the code with pylint
-      run: |
-        pylint --version
-        pylint victor_smart_kill
-    - name: Analysing the code with mypy
-      run: |
-        mypy -p victor_smart_kill 
-    - name: Test with pytest
-      run: |
-        pytest tests/test_trap_mapping.py
-      
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Update pip
+        run: |
+          pip install -U pip
+
+      - name: Install dependencies
+        run: |
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Check formatting with black
+        run: |
+          black --check victor_smart_kill
+
+      - name: Lint with flake8
+        run: |
+          flake8 victor_smart_kill
+
+      - name: Analyse the code with pylint
+        run: |
+          pylint victor_smart_kill
+
+      - name: Analyse the code with mypy
+        run: |
+          mypy -p victor_smart_kill
+
+      - name: Test with pytest
+        run: |
+          pytest tests/test_trap_mapping.py
